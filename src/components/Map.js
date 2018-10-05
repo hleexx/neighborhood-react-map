@@ -39,7 +39,7 @@ class Map extends Component {
 	          		bootstrapURLKeys={{ key: "AIzaSyB_TOMwP-bLmM-Fz4rfd-BhBZTNa4Y6S-c" }}
 	          		center={this.props.center}
 	          		zoom={this.props.zoom}>
-	   				{places.map(place => <Place name={place.name} lat={place.lat} lng={place.lng}/>)}
+	   				{places.map(place => <Place lat={place.lat} lng={place.lng}/>)}
 	        	</GoogleMapReact>
 	        </div>
         )
