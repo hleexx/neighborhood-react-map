@@ -4,7 +4,6 @@ class Place extends Component {
     render() {
         return (
         	<div className ="place">
-        		{this.props.name}
 	        </div>
         )
     }
