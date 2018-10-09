@@ -1,4 +1,3 @@
-
 const locations = [
 	{
 		name: "O Ya",

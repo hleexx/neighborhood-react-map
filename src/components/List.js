@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
-import locations from '../data/locations';
 
 class List extends Component {
+
 	render() {
 		return (
 			<div id="list">
-				<input type="text" name="filter">
-				</input>
-					<ul>
-						{locations.map(location => <li>{location.name}</li>)}
-					</ul>
+				<input type="text" name="filter" value={this.props.query}
+					onChange={(event) => this.props.handleUpdateQuery(event.target.value)} />
+				<ul>
+					{this.props.locations.map(location => <li key={location.name}>{location.name}</li>)}
+				</ul>
 
 			</div>
 		)
