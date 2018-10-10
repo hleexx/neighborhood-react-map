@@ -1,6 +1,29 @@
-#map {
+.header {
+  position: fixed;
+  width: 80%;
+  z-index: 1;
+  background-color: #000;
+  color: #fff;
+  left: 20%;
+  padding-left: 20px;
+}
+
+.header.list-closed {
+  width: 100%;
+  left: 0%;
+}
+
+button {
+  margin-right: 10px;
+}
+
+.map {
   height: 100vh;
   width: 80%;
+}
+
+.map.list-closed {
+  width: 100%;
 }
 
 .place {
@@ -27,12 +50,16 @@
   border-top: 17px solid #f76764;
 }
 
-#list {
+.list {
   width: 20%;
 }
 
-#list ul {
+.list ul {
   list-style: none;
+}
+
+.list.list-closed {
+  width: 0%;
 }
 
 .flex-container {

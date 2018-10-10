@@ -10,6 +10,19 @@ class App extends Component {
         this.state = {
             locations: locations,
             query: "",
+            isOpen: false,
+        }
+    }
+
+    toggleMenu() {
+        this.setState({ isOpen: !this.state.isOpen });
+    }
+
+    listClosedClass() {
+        if (this.state.isOpen) {
+            return ""
+        } else {
+            return "list-closed"
         }
     }
 
@@ -25,9 +38,17 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App flex-container">
-                <List locations={this.state.locations} query={this.state.query} handleUpdateQuery={this.updateQuery}/>
-                <Map locations={this.state.locations}/>
+            <div>
+                <div className={this.listClosedClass() + " header"}>
+                    <h1>
+                        <button onClick={() => this.toggleMenu()}>&#9776;</button>
+                        Neighborhood Map
+                    </h1>
+                </div>
+                <div className="App flex-container">
+                    <List className={this.listClosedClass()} locations={this.state.locations} query={this.state.query} handleUpdateQuery={this.updateQuery}/>
+                    <Map className={this.listClosedClass()} locations={this.state.locations}/>
+                </div>
             </div>
         );
     }

@@ -5,7 +5,7 @@ import Place from './Place';
 class Map extends Component {
     render() {
         return (
-        	<div id="map">
+        	<div className={this.props.className + " map"}>
 	         	<GoogleMapReact
 	          		bootstrapURLKeys={{ key: "AIzaSyB_TOMwP-bLmM-Fz4rfd-BhBZTNa4Y6S-c" }}
 	          		center={this.props.center}
