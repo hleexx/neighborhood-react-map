@@ -1,5 +1,6 @@
 const locations = [
 	{
+		id: "87f7kR7nTz8WHnmtLM_S6w",
 		name: "O Ya",
 		lat: 42.351859,
 		lng: -71.056815

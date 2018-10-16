@@ -67,3 +67,15 @@ button {
   margin: 0;
   display: flex;
 }
+
+li img {
+  width: 250px;
+}
+
+li h2 {
+  font-size: 16px;
+}
+
+li h3 {
+  font-size: 14px;
+}
