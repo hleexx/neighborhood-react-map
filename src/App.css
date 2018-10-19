@@ -27,6 +27,20 @@ button {
 }
 
 .place {
+  
+}
+
+.info {
+  width: 200px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 25px;
+}
+
+.place-marker {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -39,7 +53,7 @@ button {
   background-color: #812c27;
 }
 
-.place::after {
+.place-marker::after {
   position: absolute;
   content: '';
   width: 0px;
