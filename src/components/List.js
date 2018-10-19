@@ -1,19 +1,6 @@
 import React, { Component } from 'react';
-import { getListYelpData } from '../services/Yelp.js';
 
 class List extends Component {
-
-	constructor(props) {
-		super(props);
-		this.state = {
-			locations: [],
-		}
-	}
-
-	componentDidMount() {
-		Promise.all(this.props.locations.map(location => getListYelpData(location.id)))
-		.then(locations => this.setState({locations}))
-	}
 
 	listItem (location) {
 		return (
@@ -35,7 +22,7 @@ class List extends Component {
 				<input type="text" name="filter" value={this.props.query}
 					onChange={(event) => this.props.handleUpdateQuery(event.target.value)} />
 				<ul>
-					{this.state.locations.map(location => this.listItem(location))}
+					{this.props.locations.map(location => this.listItem(location))}
 				</ul>
 
 			</div>
