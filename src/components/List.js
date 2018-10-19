@@ -8,22 +8,23 @@ class List extends Component {
 		this.state = {
 			locations: [],
 		}
+	}
 
+	componentDidMount() {
 		Promise.all(this.props.locations.map(location => getListYelpData(location.id)))
 		.then(locations => this.setState({locations}))
 	}
 
 	listItem (location) {
-		const yelpData = getListYelpData(location.id)
 		return (
-			<li key={yelpData.id}>
-				<img src={yelpData.image_url}></img>
-				<h2>{yelpData.name}</h2>
-				{/*<h3>{yelpData.categories[0].title}</h3>
-				<h3>{yelpData.location.display_address[0]}<br/>
-				{yelpData.location.display_address[1]}</h3>
-				<h3>{yelpData.phone}</h3>
-				<h3>{yelpData.is_open_now}</h3>*/}
+			<li key={location.id}>
+				<img src={location.image_url}></img>
+				<h2>{location.name}</h2>
+				<h3>{location.categories[0].title}</h3>
+				<h3>{location.location.display_address[0]}<br/>
+				{location.location.display_address[1]}</h3>
+				<h3>{location.phone}</h3>
+				<h3>{location.is_open_now}</h3>
 			</li>
 		);
 	}
@@ -34,7 +35,7 @@ class List extends Component {
 				<input type="text" name="filter" value={this.props.query}
 					onChange={(event) => this.props.handleUpdateQuery(event.target.value)} />
 				<ul>
-					{this.props.locations.map(location => this.listItem(location))}
+					{this.state.locations.map(location => this.listItem(location))}
 				</ul>
 
 			</div>

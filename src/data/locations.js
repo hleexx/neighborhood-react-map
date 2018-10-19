@@ -30,6 +30,6 @@ const locations = [
 		lng: -71.048676
 	},	
 
-]
+];
 
 export default locations;
