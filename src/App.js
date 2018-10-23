@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './responsive.css'
 import Map from './components/Map.js';
 import List from './components/List.js';
 import locations from './data/locations.js';

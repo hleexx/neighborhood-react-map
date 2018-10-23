@@ -19,6 +19,7 @@ class List extends Component {
 	render() {
 		return (
 			<div className={this.props.className + " list"}>
+				<h3 className="filter-text">Filter by Restaurant Name:</h3>
 				<input type="text" name="filter" value={this.props.query}
 					onChange={(event) => this.props.handleUpdateQuery(event.target.value)} />
 				<ul>
