@@ -20,6 +20,7 @@ class App extends Component {
     componentDidMount() {
         Promise.all(this.state.locations.map(location => getListYelpData(location.id)))
         .then(locations => this.setState({yelpLocationsData: locations}))
+        .catch(() => alert("Cannot load locations from Yelp"))
     }
 
     toggleMenu() {
