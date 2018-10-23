@@ -9,7 +9,6 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            locations: locations,
             yelpLocationsData: [],
             query: "",
             isOpen: false,
@@ -18,9 +17,13 @@ class App extends Component {
     }
 
     componentDidMount() {
-        Promise.all(this.state.locations.map(location => getListYelpData(location.id)))
-        .then(locations => this.setState({yelpLocationsData: locations}))
-        .catch(() => alert("Cannot load locations from Yelp"))
+        Promise.all(locations.map(location => getListYelpData(location.id)))
+        .then(locations => {
+            this.setState({yelpLocationsData: locations})
+        })
+        .catch(err => {
+            alert("Could not load locations from Yelp");
+        });
     }
 
     toggleMenu() {

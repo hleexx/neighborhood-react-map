@@ -3,7 +3,6 @@ import GoogleMapReact from 'google-map-react';
 import Place from './Place';
 
 class Map extends Component {
-
 	selectedClass(locationName) {
 		if (this.props.selectedLocation === locationName) {
 			return "selected"; 
