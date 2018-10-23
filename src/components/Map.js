@@ -4,25 +4,12 @@ import Place from './Place';
 
 class Map extends Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			selectedLocation: "",
-		}
-	}
-
 	selectedClass(locationName) {
-		if (this.state.selectedLocation === locationName) {
+		if (this.props.selectedLocation === locationName) {
 			return "selected"; 
 		} else {
 			return "";
 		}
-	}
-
-	updateLocation = (locationName) => {
-		this.setState({
-			selectedLocation: locationName,
-		})
 	}
 
     render() {
@@ -38,7 +25,7 @@ class Map extends Component {
 	   					lng={location.coordinates.longitude} 
 	   					location={location}
 	   					selectedClass={this.selectedClass(location.name)}
-	   					handleSelectedLocation={this.updateLocation}/>)}
+	   					handleSelectedLocation={this.props.handleSelectedLocation}/>)}
 	        	</GoogleMapReact>
 	        </div>
         )

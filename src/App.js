@@ -13,6 +13,7 @@ class App extends Component {
             yelpLocationsData: [],
             query: "",
             isOpen: false,
+            selectedLocation: "",
         }
     }
 
@@ -31,6 +32,12 @@ class App extends Component {
         } else {
             return "list-closed"
         }
+    }
+
+    updateLocation = (locationName) => {
+        this.setState({
+            selectedLocation: locationName,
+        })
     }
 
     /* Once filter is updated, we want to change filter in App.js 
@@ -53,8 +60,15 @@ class App extends Component {
                     </h1>
                 </div>
                 <div className="App flex-container">
-                    <List className={this.listClosedClass()} locations={this.state.yelpLocationsData} query={this.state.query} handleUpdateQuery={this.updateQuery}/>
-                    <Map className={this.listClosedClass()} locations={this.state.yelpLocationsData}/>
+                    <List className={this.listClosedClass()} 
+                        locations={this.state.yelpLocationsData} 
+                        query={this.state.query} 
+                        handleUpdateQuery={this.updateQuery}
+                        handleSelectedLocation={this.updateLocation}/>
+                    <Map className={this.listClosedClass()} 
+                        locations={this.state.yelpLocationsData}
+                        handleSelectedLocation={this.updateLocation}
+                        selectedLocation={this.state.selectedLocation}/>
                 </div>
             </div>
         );
