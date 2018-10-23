@@ -36,10 +36,14 @@ button {
   background-color: #fff;
   border-radius: 20px;
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   left: 25px;
-  display: flex;
+  display: none;
   align-items: center;
+}
+
+.place.selected .info {
+  display: flex;
 }
 
 .info-image {
@@ -79,6 +83,8 @@ button {
   width: 8px;
   height: 8px;
   background-color: #812c27;
+
+  transition: all 1s;
 }
 
 .place-marker::after {
@@ -90,6 +96,16 @@ button {
   left: -6px;
   border: 10px solid transparent;
   border-top: 17px solid #f76764;
+  transition: all 1s;
+}
+
+.place.selected .place-marker {
+  background-color: #025ca6;
+  border: 8px solid #5ba4cd;
+}
+
+.place.selected .place-marker::after {
+  border-top: 17px solid #5ba4cd;
 }
 
 .list {

@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class Place extends Component {
     render() {
         return (
-        	<div className ="place">
+        	<div className ={"place " + this.props.selectedClass} onClick={event => this.props.handleSelectedLocation(this.props.location.name)}>
         		<div className="info">
         			<div className="info-image">
         				<img src={this.props.location.image_url}></img>
@@ -14,7 +14,7 @@ class Place extends Component {
 						{this.props.location.location.display_address[1]}</h2>
         			</div>
         		</div>
-        			<div className ="place-marker"></div>
+        		<div className ="place-marker"></div>
 	        </div>
         )
     }
