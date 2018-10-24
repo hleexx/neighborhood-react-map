@@ -22,14 +22,17 @@ An fully accessible interactive map of Boston featuring 5 great restaurant recom
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 
-* Install the CORS Anywhere NodeJS reverse proxy
+* Download and start the CORS Anywhere NodeJS reverse proxy in a separate window
+
+```
+git clone https://github.com/Rob--W/cors-anywhere
+cd cors-anywhere
+npm install
+npm run
+```
 
 Find more information [here](https://github.com/Rob--W/cors-anywhere).
 
-
-* Install the Service Worker Precache
-
-Find more information [here](https://github.com/GoogleChromeLabs/sw-precache#methods)
 
 ### Installing
 
