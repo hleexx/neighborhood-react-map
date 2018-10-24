@@ -13,7 +13,7 @@ class Map extends Component {
 
     render() {
         return (
-        	<div className={this.props.className + " map"}>
+        	<div className={this.props.className + " map"} role="application" aria-label="Map with restaurant locations">
 	         	<GoogleMapReact
 	          		bootstrapURLKeys={{ key: "AIzaSyB_TOMwP-bLmM-Fz4rfd-BhBZTNa4Y6S-c" }}
 	          		center={this.props.center}
