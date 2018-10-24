@@ -62,7 +62,10 @@ class App extends Component {
             <div>
                 <div className={this.listClosedClass() + " header"}>
                     <h1>
-                        <button onClick={() => this.toggleMenu()}>&#9776;</button>
+                        <button aria-expanded={this.state.isOpen} 
+                            aria-haspopup="true"
+                            role="menu"
+                            onClick={() => this.toggleMenu()}>&#9776;</button>
                         Neighborhood Map
                     </h1>
                 </div>

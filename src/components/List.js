@@ -12,7 +12,9 @@ class List extends Component {
 
 	listItem (location) {
 		return (
-			<li key={location.id} onClick={event => this.props.handleSelectedLocation(location.name)}>
+			<li key={location.id} 
+				onKeyUp={event => event.keyCode === 13 && this.props.handleSelectedLocation(location.name)}
+				onClick={event => this.props.handleSelectedLocation(location.name)}>
 				<img src={location.image_url} role="img" alt={location.name + " image"}></img>
 				<h2 className="restaurant-name" tabIndex="0">{location.name}</h2>
 				<h3 className="restaurant-categories">{location.categories[0].title}</h3>

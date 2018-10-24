@@ -3,7 +3,8 @@ import React, {Component} from 'react';
 class Place extends Component {
     render() {
         return (
-        	<div className ={"place " + this.props.selectedClass} onClick={event => this.props.handleSelectedLocation(this.props.location.name)}>
+        	<div className ={"place " + this.props.selectedClass} onKeyUp={event => event.keyCode === 13 && this.props.handleSelectedLocation(this.props.location.name)}
+                onClick={event => this.props.handleSelectedLocation(this.props.location.name)}>
         		<div className="info">
         			<div className="info-image">
         				<img src={this.props.location.image_url} role="img" alt={this.props.location.name + " image"}></img>
