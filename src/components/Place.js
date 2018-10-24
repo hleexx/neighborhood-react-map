@@ -14,7 +14,7 @@ class Place extends Component {
 						{this.props.location.location.display_address[1]}</h2>
         			</div>
         		</div>
-        		<div className ="place-marker" tabindex="0" alt={this.props.location.name + " map marker"}></div>
+        		<div className ="place-marker" tabIndex="0" alt={this.props.location.name + " map marker"}></div>
 	        </div>
         )
     }
