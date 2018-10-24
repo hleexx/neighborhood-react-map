@@ -138,6 +138,7 @@ input {
 
 .list.list-closed {
   width: 0%;
+  display: none;
 }
 
 .flex-container {
