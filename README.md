@@ -34,6 +34,15 @@ npm run
 Find more information [here](https://github.com/Rob--W/cors-anywhere).
 
 
+* Download and run the Service Worker Precache
+
+```
+npm run build
+serve -s build
+```
+
+Then visit `localhost:5000` in your browser
+
 ### Installing
 
 1. Install all project dependencies with `npm install`
