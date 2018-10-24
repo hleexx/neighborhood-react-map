@@ -10,6 +10,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            locations: [],
             yelpLocationsData: [],
             query: "",
             isOpen: false,
@@ -20,7 +21,8 @@ class App extends Component {
     componentDidMount() {
         Promise.all(locations.map(location => getListYelpData(location.id)))
         .then(locations => {
-            this.setState({yelpLocationsData: locations})
+            this.setState({yelpLocationsData: locations});
+            this.setState({locations: locations});
         })
         .catch(err => {
             alert("Could not load locations from Yelp");
@@ -51,7 +53,7 @@ class App extends Component {
     updateQuery = (query) => {
         this.setState({
             query: query,
-            locations: locations.filter(location => location.name.toLowerCase().startsWith(query.toLowerCase())) 
+            locations: this.state.yelpLocationsData.filter(location => location.name.toLowerCase().startsWith(query.toLowerCase())) 
         })
     }
 
@@ -66,12 +68,12 @@ class App extends Component {
                 </div>
                 <div className="App flex-container">
                     <List className={this.listClosedClass()} 
-                        locations={this.state.yelpLocationsData} 
+                        locations={this.state.locations} 
                         query={this.state.query} 
                         handleUpdateQuery={this.updateQuery}
                         handleSelectedLocation={this.updateLocation}/>
                     <Map className={this.listClosedClass()} 
-                        locations={this.state.yelpLocationsData}
+                        locations={this.state.locations}
                         handleSelectedLocation={this.updateLocation}
                         selectedLocation={this.state.selectedLocation}/>
                 </div>
