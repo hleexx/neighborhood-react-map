@@ -21,8 +21,9 @@ class App extends Component {
     componentDidMount() {
         Promise.all(locations.map(location => getListYelpData(location.id)))
         .then(locations => {
-            this.setState({yelpLocationsData: locations});
-            this.setState({locations: locations});
+            const filteredLocations = locations.filter(location => location.name)
+            this.setState({yelpLocationsData: filteredLocations});
+            this.setState({locations: filteredLocations});
         })
         .catch(err => {
             alert("Could not load locations from Yelp");

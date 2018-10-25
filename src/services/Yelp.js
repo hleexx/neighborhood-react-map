@@ -8,5 +8,12 @@ export function getListYelpData (id) {
     headers: {
       "Authorization": "Bearer bTCZl3M-_amKqI93FmeRYEroM3KDSbpoBde6J87SYf4ndyUzrpbZYR6ZuOXQZw5YVk5eb8OHjeWXZVlzu32mnxkw8YH-8uDnUPiUtB1aCoaNHrIYp-YdVFhnLUvFW3Yx"
     }
-  }).then(response => response.json())
+  }).then(response => {
+  	if (response.status !== 200) {
+  		console.error(`Yelp fetch failed: ${response.status}`);
+  		return {};
+  	} else {
+  		return response.json();
+  	}
+  }).catch(() => {})
 }
